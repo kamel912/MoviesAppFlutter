@@ -1,0 +1,55 @@
+{
+  "@@locale": "ar",
+  "account": "الحساب الشخصي",
+  "@account": {
+    "description": "Account page title"
+  },
+  "favorites": "المفضلة",
+  "@favorites": {
+    "description": "Favorites page title"
+  },
+  "languages": "{language, select, en {الإنجليزية} ar {العربية}}",
+  "@languages": {
+    "description": "Languages key",
+    "placeholders": {
+      "languageCode": {
+        "type": "String",
+        "example": "ar"
+      }
+    }
+  },
+  "movies": "أفلام",
+  "@movies": {
+    "description": "Movies title"
+  },
+  "tv": "مسلسبلات",
+  "@tv": {
+    "description": "TV tab title"
+  },
+  "greeting": "مرحبا {userName}!",
+  "@greeting": {
+    "description": "Greeting for user",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "Mohamed"
+      }
+    }
+  },
+  "movie" : "فيلم",
+  "@movie": {
+    "description": "Movie tab title"
+  },
+  "search" : "بحث",
+  "@search": {
+    "description": "Search page title"
+  },
+  "search_hint" : "بحث...",
+  "@search_hint": {
+    "description": "Search hint"
+  },
+  "selectLanguage" : "أختر لغتك:",
+  "@selectLanguage": {
+    "description": "Select Language title"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "@@locale": "en",
+  "account": "Account",
+  "@account": {
+    "description": "Account page title"
+  },
+  "favorites": "Favorites",
+  "@favorites": {
+    "description": "Favorites page title"
+  },
+  "languages": "{language, select, en {English} ar {Arabic}}",
+  "@languages": {
+    "description": "Languages key",
+    "placeholders": {
+      "languageCode": {
+        "type": "String",
+        "example": "en"
+      }
+    }
+  },
+  "movies": "Movies",
+  "@movies": {
+    "description": "Movies title"
+  },
+  "tv": "TV",
+  "@tv": {
+    "description": "TV tab title"
+  },
+  "greeting": "Hello, {userName}",
+  "@greeting": {
+    "description": "Greeting for user",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "Mohamed"
+      }
+    }
+  },
+  "movie" : "Movie",
+  "@movie": {
+    "description": "Movie tab title"
+  },
+  "search" : "Search",
+  "@search": {
+    "description": "Search page title"
+  },
+  "searchHint" : "Search...",
+  "@searchHint": {
+    "description": "Search hint"
+  },
+  "selectLanguage" : "Select Language:",
+  "@selectLanguage": {
+    "description": "Select Language title"
+  }
+
+}
