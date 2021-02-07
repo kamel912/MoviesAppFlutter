@@ -44,3 +44,5 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+lib/data/api/base_urls.dart
+lib/data/api/api_key.dart
