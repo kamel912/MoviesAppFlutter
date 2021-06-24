@@ -5,9 +5,9 @@ import 'package:provider/provider.dart';
 import 'package:tester_app/di/providers/navigation_provider.dart';
 import 'package:tester_app/ui/base_widgets/base_app_page.dart';
 import 'package:tester_app/ui/base_widgets/navigation_widgets.dart';
-import 'package:tester_app/ui/home_page/account_screen/account_screen.dart';
 import 'package:tester_app/ui/home_page/favorites_screen/favorites_screen.dart';
 import 'package:tester_app/ui/home_page/home_screen.dart';
+import 'package:tester_app/ui/home_page/profile_screen/profile_screen.dart';
 import 'package:tester_app/ui/home_page/search_screen/search_screen.dart';
 import 'package:tester_app/ui/home_page/settings_screen/settings_screen.dart';
 
@@ -36,13 +36,13 @@ class HomePage extends BaseHookPage {
                 curve: Curves.easeInOut,
               );
 
-            return child;
+            return child!;
           },
           child: PageView(
             controller: _pageController,
             physics: NeverScrollableScrollPhysics(),
             children: [
-              AccountScreen(),
+              ProfileScreen(),
               FavoritesScreen(),
               HomeScreen(),
               SearchScreen(),

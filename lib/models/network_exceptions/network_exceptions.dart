@@ -2,11 +2,12 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:tester_app/localization/l10n.dart' show AppLocalizations;
 
 part 'network_exceptions.freezed.dart';
 
 @freezed
-abstract class NetworkExceptions with _$NetworkExceptions {
+class NetworkExceptions with _$NetworkExceptions {
   const factory NetworkExceptions.requestCancelled() = RequestCancelled;
 
   const factory NetworkExceptions.unauthorizedRequest() = UnauthorizedRequest;
@@ -47,27 +48,27 @@ abstract class NetworkExceptions with _$NetworkExceptions {
         NetworkExceptions networkExceptions;
         if (error is DioError) {
           switch (error.type) {
-            case DioErrorType.CANCEL:
+            case DioErrorType.cancel:
               networkExceptions = NetworkExceptions.requestCancelled();
               break;
-            case DioErrorType.CONNECT_TIMEOUT:
+            case DioErrorType.connectTimeout:
               networkExceptions = NetworkExceptions.requestTimeout();
               break;
-            case DioErrorType.DEFAULT:
+            case DioErrorType.other:
               networkExceptions = NetworkExceptions.noInternetConnection();
               break;
-            case DioErrorType.RECEIVE_TIMEOUT:
+            case DioErrorType.receiveTimeout:
               networkExceptions = NetworkExceptions.sendTimeout();
               break;
-            case DioErrorType.RESPONSE:
-              switch (error.response.statusCode) {
+            case DioErrorType.response:
+              switch (error.response!.statusCode) {
                 case 400:
                 case 401:
                 case 403:
                   networkExceptions = NetworkExceptions.unauthorizedRequest();
                   break;
                 case 404:
-                  networkExceptions = NetworkExceptions.notFound("Not found");
+                  networkExceptions = NetworkExceptions.notFound(AppLocalizations.current.notFound);
                   break;
                 case 409:
                   networkExceptions = NetworkExceptions.conflict();
@@ -82,13 +83,13 @@ abstract class NetworkExceptions with _$NetworkExceptions {
                   networkExceptions = NetworkExceptions.serviceUnavailable();
                   break;
                 default:
-                  var responseCode = error.response.statusCode;
+                  var responseCode = error.response!.statusCode;
                   networkExceptions = NetworkExceptions.defaultError(
-                    "Received invalid status code: $responseCode",
+                    AppLocalizations.current.receivedInvalidStatusCode(responseCode!),
                   );
               }
               break;
-            case DioErrorType.SEND_TIMEOUT:
+            case DioErrorType.sendTimeout:
               networkExceptions = NetworkExceptions.sendTimeout();
               break;
           }
@@ -116,39 +117,39 @@ abstract class NetworkExceptions with _$NetworkExceptions {
   static String getErrorMessage(NetworkExceptions networkExceptions) {
     var errorMessage = "";
     networkExceptions.when(notImplemented: () {
-      errorMessage = "Not Implemented";
+      errorMessage = AppLocalizations.current.notImplemented;
     }, requestCancelled: () {
-      errorMessage = "Request Cancelled";
+      errorMessage = AppLocalizations.current.requestCancelled;
     }, internalServerError: () {
-      errorMessage = "Internal Server Error";
+      errorMessage = AppLocalizations.current.internalServerError;
     }, notFound: (String reason) {
       errorMessage = reason;
     }, serviceUnavailable: () {
-      errorMessage = "Service unavailable";
+      errorMessage = AppLocalizations.current.serviceUnavailable;
     }, methodNotAllowed: () {
-      errorMessage = "Method Allowed";
+      errorMessage = AppLocalizations.current.methodAllowed;
     }, badRequest: () {
-      errorMessage = "Bad request";
+      errorMessage = AppLocalizations.current.badRequest;
     }, unauthorizedRequest: () {
-      errorMessage = "Unauthorized request";
+      errorMessage = AppLocalizations.current.unauthorizedRequest;
     }, unexpectedError: () {
-      errorMessage = "Unexpected error occurred";
+      errorMessage = AppLocalizations.current.unexpectedErrorOccurred;
     }, requestTimeout: () {
-      errorMessage = "Connection request timeout";
+      errorMessage = AppLocalizations.current.connectionRequestTimeout;
     }, noInternetConnection: () {
-      errorMessage = "No internet connection";
+      errorMessage = AppLocalizations.current.noInternetConnection;
     }, conflict: () {
-      errorMessage = "Error due to a conflict";
+      errorMessage = AppLocalizations.current.errorDueToAConflict;
     }, sendTimeout: () {
-      errorMessage = "Send timeout in connection with API server";
+      errorMessage = AppLocalizations.current.sendTimeoutInConnectionWithApiServer;
     }, unableToProcess: () {
-      errorMessage = "Unable to process the data";
+      errorMessage = AppLocalizations.current.unableToProcessTheData;
     }, defaultError: (String error) {
       errorMessage = error;
     }, formatException: () {
-      errorMessage = "Unexpected error occurred";
+      errorMessage = AppLocalizations.current.unexpectedErrorOccurred;
     }, notAcceptable: () {
-      errorMessage = "Not acceptable";
+      errorMessage = AppLocalizations.current.notAcceptable;
     });
     return errorMessage;
   }

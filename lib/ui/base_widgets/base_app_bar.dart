@@ -4,48 +4,48 @@ import 'package:tester_app/ui/base_widgets/base_constants/base_border.dart';
 typedef AppBarBuilder = PreferredSizeWidget Function(BuildContext context, double height);
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final Widget flexibleSpace;
-  final List<Widget> actions;
+  final Widget? flexibleSpace;
+  final List<Widget>? actions;
 
-  final PreferredSizeWidget bottom;
+  final PreferredSizeWidget? bottom;
 
-  final double toolbarHeight;
+  final double? toolbarHeight;
 
-  final Widget leading;
+  final Widget? leading;
 
   final bool automaticallyImplyLeading;
 
-  final Widget title;
+  final Widget? title;
 
-  final double elevation;
+  final double? elevation;
 
-  final Color shadowColor;
+  final Color? shadowColor;
 
-  final Color backgroundColor;
+  final Color? backgroundColor;
 
-  final Brightness brightness;
+  final Brightness? brightness;
 
-  final IconThemeData iconTheme;
+  final IconThemeData? iconTheme;
 
-  final IconThemeData actionsIconTheme;
+  final IconThemeData? actionsIconTheme;
 
-  final TextTheme textTheme;
+  final TextTheme? textTheme;
 
   final bool primary;
 
-  final bool centerTitle;
+  final bool? centerTitle;
 
   final double bottomOpacity;
 
   final bool excludeHeaderSemantics;
 
-  final double titleSpacing;
+  final double? titleSpacing;
 
   final double toolbarOpacity;
 
-  final double leadingWidth;
+  final double? leadingWidth;
 
-  final AppBarBuilder builder;
+  final AppBarBuilder? builder;
 
   @override
   Widget build(BuildContext context) => AppBar(
@@ -77,7 +77,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       );
 
   BaseAppBar({
-    Key key,
+    Key? key,
     this.leading,
     this.automaticallyImplyLeading = true,
     this.title,
@@ -103,6 +103,5 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   });
 
   @override
-  Size get preferredSize =>
-      Size.fromHeight(toolbarHeight ?? kToolbarHeight + (bottom?.preferredSize?.height ?? 0.0));
+  Size get preferredSize => Size.fromHeight(toolbarHeight ?? kToolbarHeight + (bottom?.preferredSize.height ?? 0.0));
 }

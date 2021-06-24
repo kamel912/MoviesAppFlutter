@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'result_state.dart';
 
@@ -9,29 +9,28 @@ part of 'result_state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ResultStateTearOff {
   const _$ResultStateTearOff();
 
-// ignore: unused_element
   Idle<T> idle<T>() {
     return Idle<T>();
   }
 
-// ignore: unused_element
   Loading<T> loading<T>() {
     return Loading<T>();
   }
 
-// ignore: unused_element
-  Data<T> data<T>({@required T data}) {
+  Data<T> data<T>({required T data}) {
     return Data<T>(
       data: data,
     );
   }
 
-// ignore: unused_element
-  Error<T> error<T>({@required NetworkExceptions error}) {
+  Error<T> error<T>({required NetworkExceptions error}) {
     return Error<T>(
       error: error,
     );
@@ -39,41 +38,44 @@ class _$ResultStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ResultState = _$ResultStateTearOff();
 
 /// @nodoc
 mixin _$ResultState<T> {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult idle(),
-    @required TResult loading(),
-    @required TResult data(T data),
-    @required TResult error(NetworkExceptions error),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() loading,
+    required TResult Function(T data) data,
+    required TResult Function(NetworkExceptions error) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult idle(),
-    TResult loading(),
-    TResult data(T data),
-    TResult error(NetworkExceptions error),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? loading,
+    TResult Function(T data)? data,
+    TResult Function(NetworkExceptions error)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult idle(Idle<T> value),
-    @required TResult loading(Loading<T> value),
-    @required TResult data(Data<T> value),
-    @required TResult error(Error<T> value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Data<T> value) data,
+    required TResult Function(Error<T> value) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult idle(Idle<T> value),
-    TResult loading(Loading<T> value),
-    TResult data(Data<T> value),
-    TResult error(Error<T> value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Data<T> value)? data,
+    TResult Function(Error<T> value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -110,18 +112,13 @@ class _$IdleCopyWithImpl<T, $Res> extends _$ResultStateCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-class _$Idle<T> with DiagnosticableTreeMixin implements Idle<T> {
+
+class _$Idle<T> implements Idle<T> {
   const _$Idle();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ResultState<$T>.idle()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ResultState<$T>.idle'));
   }
 
   @override
@@ -134,29 +131,24 @@ class _$Idle<T> with DiagnosticableTreeMixin implements Idle<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult idle(),
-    @required TResult loading(),
-    @required TResult data(T data),
-    @required TResult error(NetworkExceptions error),
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() loading,
+    required TResult Function(T data) data,
+    required TResult Function(NetworkExceptions error) error,
   }) {
-    assert(idle != null);
-    assert(loading != null);
-    assert(data != null);
-    assert(error != null);
     return idle();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult idle(),
-    TResult loading(),
-    TResult data(T data),
-    TResult error(NetworkExceptions error),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? loading,
+    TResult Function(T data)? data,
+    TResult Function(NetworkExceptions error)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (idle != null) {
       return idle();
     }
@@ -165,29 +157,24 @@ class _$Idle<T> with DiagnosticableTreeMixin implements Idle<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult idle(Idle<T> value),
-    @required TResult loading(Loading<T> value),
-    @required TResult data(Data<T> value),
-    @required TResult error(Error<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Data<T> value) data,
+    required TResult Function(Error<T> value) error,
   }) {
-    assert(idle != null);
-    assert(loading != null);
-    assert(data != null);
-    assert(error != null);
     return idle(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult idle(Idle<T> value),
-    TResult loading(Loading<T> value),
-    TResult data(Data<T> value),
-    TResult error(Error<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Data<T> value)? data,
+    TResult Function(Error<T> value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (idle != null) {
       return idle(this);
     }
@@ -216,18 +203,13 @@ class _$LoadingCopyWithImpl<T, $Res> extends _$ResultStateCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-class _$Loading<T> with DiagnosticableTreeMixin implements Loading<T> {
+
+class _$Loading<T> implements Loading<T> {
   const _$Loading();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ResultState<$T>.loading()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ResultState<$T>.loading'));
   }
 
   @override
@@ -240,29 +222,24 @@ class _$Loading<T> with DiagnosticableTreeMixin implements Loading<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult idle(),
-    @required TResult loading(),
-    @required TResult data(T data),
-    @required TResult error(NetworkExceptions error),
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() loading,
+    required TResult Function(T data) data,
+    required TResult Function(NetworkExceptions error) error,
   }) {
-    assert(idle != null);
-    assert(loading != null);
-    assert(data != null);
-    assert(error != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult idle(),
-    TResult loading(),
-    TResult data(T data),
-    TResult error(NetworkExceptions error),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? loading,
+    TResult Function(T data)? data,
+    TResult Function(NetworkExceptions error)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -271,29 +248,24 @@ class _$Loading<T> with DiagnosticableTreeMixin implements Loading<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult idle(Idle<T> value),
-    @required TResult loading(Loading<T> value),
-    @required TResult data(Data<T> value),
-    @required TResult error(Error<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Data<T> value) data,
+    required TResult Function(Error<T> value) error,
   }) {
-    assert(idle != null);
-    assert(loading != null);
-    assert(data != null);
-    assert(error != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult idle(Idle<T> value),
-    TResult loading(Loading<T> value),
-    TResult data(Data<T> value),
-    TResult error(Error<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Data<T> value)? data,
+    TResult Function(Error<T> value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -323,32 +295,28 @@ class _$DataCopyWithImpl<T, $Res> extends _$ResultStateCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object data = freezed,
+    Object? data = freezed,
   }) {
     return _then(Data<T>(
-      data: data == freezed ? _value.data : data as T,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
-class _$Data<T> with DiagnosticableTreeMixin implements Data<T> {
-  const _$Data({@required this.data}) : assert(data != null);
+
+class _$Data<T> implements Data<T> {
+  const _$Data({required this.data});
 
   @override
   final T data;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ResultState<$T>.data(data: $data)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ResultState<$T>.data'))
-      ..add(DiagnosticsProperty('data', data));
   }
 
   @override
@@ -370,29 +338,24 @@ class _$Data<T> with DiagnosticableTreeMixin implements Data<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult idle(),
-    @required TResult loading(),
-    @required TResult data(T data),
-    @required TResult error(NetworkExceptions error),
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() loading,
+    required TResult Function(T data) data,
+    required TResult Function(NetworkExceptions error) error,
   }) {
-    assert(idle != null);
-    assert(loading != null);
-    assert(data != null);
-    assert(error != null);
     return data(this.data);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult idle(),
-    TResult loading(),
-    TResult data(T data),
-    TResult error(NetworkExceptions error),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? loading,
+    TResult Function(T data)? data,
+    TResult Function(NetworkExceptions error)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (data != null) {
       return data(this.data);
     }
@@ -401,29 +364,24 @@ class _$Data<T> with DiagnosticableTreeMixin implements Data<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult idle(Idle<T> value),
-    @required TResult loading(Loading<T> value),
-    @required TResult data(Data<T> value),
-    @required TResult error(Error<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Data<T> value) data,
+    required TResult Function(Error<T> value) error,
   }) {
-    assert(idle != null);
-    assert(loading != null);
-    assert(data != null);
-    assert(error != null);
     return data(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult idle(Idle<T> value),
-    TResult loading(Loading<T> value),
-    TResult data(Data<T> value),
-    TResult error(Error<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Data<T> value)? data,
+    TResult Function(Error<T> value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (data != null) {
       return data(this);
     }
@@ -432,11 +390,11 @@ class _$Data<T> with DiagnosticableTreeMixin implements Data<T> {
 }
 
 abstract class Data<T> implements ResultState<T> {
-  const factory Data({@required T data}) = _$Data<T>;
+  const factory Data({required T data}) = _$Data<T>;
 
-  T get data;
+  T get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DataCopyWith<T, Data<T>> get copyWith;
+  $DataCopyWith<T, Data<T>> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -459,18 +417,18 @@ class _$ErrorCopyWithImpl<T, $Res> extends _$ResultStateCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object error = freezed,
+    Object? error = freezed,
   }) {
     return _then(Error<T>(
-      error: error == freezed ? _value.error : error as NetworkExceptions,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
     ));
   }
 
   @override
   $NetworkExceptionsCopyWith<$Res> get error {
-    if (_value.error == null) {
-      return null;
-    }
     return $NetworkExceptionsCopyWith<$Res>(_value.error, (value) {
       return _then(_value.copyWith(error: value));
     });
@@ -478,23 +436,16 @@ class _$ErrorCopyWithImpl<T, $Res> extends _$ResultStateCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-class _$Error<T> with DiagnosticableTreeMixin implements Error<T> {
-  const _$Error({@required this.error}) : assert(error != null);
+
+class _$Error<T> implements Error<T> {
+  const _$Error({required this.error});
 
   @override
   final NetworkExceptions error;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ResultState<$T>.error(error: $error)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ResultState<$T>.error'))
-      ..add(DiagnosticsProperty('error', error));
   }
 
   @override
@@ -516,29 +467,24 @@ class _$Error<T> with DiagnosticableTreeMixin implements Error<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult idle(),
-    @required TResult loading(),
-    @required TResult data(T data),
-    @required TResult error(NetworkExceptions error),
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() loading,
+    required TResult Function(T data) data,
+    required TResult Function(NetworkExceptions error) error,
   }) {
-    assert(idle != null);
-    assert(loading != null);
-    assert(data != null);
-    assert(error != null);
     return error(this.error);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult idle(),
-    TResult loading(),
-    TResult data(T data),
-    TResult error(NetworkExceptions error),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? loading,
+    TResult Function(T data)? data,
+    TResult Function(NetworkExceptions error)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this.error);
     }
@@ -547,29 +493,24 @@ class _$Error<T> with DiagnosticableTreeMixin implements Error<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult idle(Idle<T> value),
-    @required TResult loading(Loading<T> value),
-    @required TResult data(Data<T> value),
-    @required TResult error(Error<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Data<T> value) data,
+    required TResult Function(Error<T> value) error,
   }) {
-    assert(idle != null);
-    assert(loading != null);
-    assert(data != null);
-    assert(error != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult idle(Idle<T> value),
-    TResult loading(Loading<T> value),
-    TResult data(Data<T> value),
-    TResult error(Error<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Data<T> value)? data,
+    TResult Function(Error<T> value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -578,9 +519,10 @@ class _$Error<T> with DiagnosticableTreeMixin implements Error<T> {
 }
 
 abstract class Error<T> implements ResultState<T> {
-  const factory Error({@required NetworkExceptions error}) = _$Error<T>;
+  const factory Error({required NetworkExceptions error}) = _$Error<T>;
 
-  NetworkExceptions get error;
+  NetworkExceptions get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ErrorCopyWith<T, Error<T>> get copyWith;
+  $ErrorCopyWith<T, Error<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tester_app/models/response_type/response_type.dart';
+import 'package:tester_app/models/response_type/models.dart';
 
 class GenericsJsonConverter<T> implements JsonConverter<T, Map<String, dynamic>> {
   const GenericsJsonConverter();
@@ -20,6 +20,15 @@ class GenericsJsonConverter<T> implements JsonConverter<T, Map<String, dynamic>>
 
   @override
   Map<String, dynamic> toJson(T model) {
-    return (model as ResponseType).toJson();
+    switch (T) {
+      case Movie:
+        return (model as Movie).toJson();
+      case Trailer:
+        return (model as Trailer).toJson();
+      case Review:
+        return (model as Review).toJson();
+      default:
+    }
+    return model as Map<String, dynamic>;
   }
 }

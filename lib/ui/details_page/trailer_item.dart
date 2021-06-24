@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tester_app/data/api/base_urls.dart';
-import 'package:tester_app/models/response_type/response_type.dart';
+import 'package:tester_app/models/response_type/models.dart';
 import 'package:tester_app/ui/base_widgets/base_constants/base_border.dart';
 
 class TrailerItem extends StatelessWidget {
@@ -40,7 +40,7 @@ class TrailerItem extends StatelessWidget {
                 color: Colors.transparent,
                 child: InkWell(
                   borderRadius: BaseBorderRadiusDirectional.all().resolve(TextDirection.ltr),
-                  onTap: () => Scaffold.of(context).showSnackBar(SnackBar(
+                  onTap: () => ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     content: Text('${trailer.name}'),
                   )),
                 ),

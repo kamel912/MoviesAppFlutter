@@ -2,7 +2,7 @@ import 'package:dio/dio.dart' hide Headers;
 import 'package:retrofit/retrofit.dart';
 import 'package:tester_app/data/api/base_urls.dart' as Urls;
 import 'package:tester_app/models/api_response/api_response.dart';
-import 'package:tester_app/models/response_type/response_type.dart';
+import 'package:tester_app/models/response_type/models.dart';
 
 part 'movies_db_client.g.dart';
 

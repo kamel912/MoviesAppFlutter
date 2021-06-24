@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:hive/hive.dart';
 import 'package:state_notifier/state_notifier.dart';
-import 'package:tester_app/l10n/app_localizations.dart';
+import 'package:tester_app/localization/l10n.dart';
+
+final String localeKey = 'locale';
 
 class LanguageProvider extends StateNotifier<Locale> with LocatorMixin {
-  LanguageProvider() : super(Locale('en')) {
-    loadLocale();
-  }
+  final Box<Locale> stateBox;
 
-  static const String LOCALE_KEY = 'localeKey';
-  static const String COUNTRY_CODE_KEY = 'countryCodeKey';
+  LanguageProvider(this.stateBox)
+      : super(
+          stateBox.get(
+                localeKey,
+                defaultValue: Locale('en'),
+              ) ??
+              Locale('en'),
+        );
 
-  loadLocale() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    if (sharedPreferences.containsKey(LOCALE_KEY)) {
-      updateLocale(Locale(sharedPreferences.getString(LOCALE_KEY)));
-    }
-  }
-
-  changeLocale(Locale locale) async {
-    read<SharedPreferences>().setString(LOCALE_KEY, locale.languageCode);
+  saveLocale(Locale locale) {
+    stateBox.put(localeKey, locale);
     updateLocale(locale);
   }
 

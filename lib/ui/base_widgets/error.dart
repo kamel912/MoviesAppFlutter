@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:tester_app/localization/l10n.dart';
 
 class AppErrorWidget extends StatelessWidget {
   final String error;
 
-  const AppErrorWidget({Key key, this.error}) : super(key: key);
+  const AppErrorWidget({Key? key, required this.error}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +14,7 @@ class AppErrorWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Error occurred: $error",
+            AppLocalizations.of(context).errorOccurred(error),
             style: TextStyle(fontSize: 15.0),
           ),
         ],

@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart' hide ErrorWidget;
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tester_app/data/api/base_urls.dart';
 import 'package:tester_app/di/providers/details_provider.dart';
-import 'package:tester_app/models/response_type/response_type.dart';
+import 'package:tester_app/localization/l10n.dart';
+import 'package:tester_app/models/response_type/models.dart';
 import 'package:tester_app/ui/base_widgets/base_constants/base_border.dart';
 import 'package:tester_app/ui/base_widgets/base_state_widget.dart';
 import 'package:tester_app/ui/base_widgets/dividers.dart';
@@ -35,7 +36,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
             shape: RoundedRectangleBorder(
               borderRadius: BaseBorderRadiusDirectional.bottom(),
             ),
-            expandedHeight: 300.0,
+            expandedHeight: MediaQuery.of(context).size.width > 600 ? 600 : 300,
             pinned: true,
             forceElevated: true,
             floating: true,
@@ -49,23 +50,23 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   StretchMode.blurBackground,
                 ],
                 background: Image.network(
-                  "$largePoster${movie?.posterPath ?? ''}",
+                  "$largePoster${movie.posterPath ?? ''}",
                   fit: BoxFit.cover,
                   alignment: Alignment.topCenter,
                   errorBuilder: (context, error, stackTrace) => AppErrorWidget(
                     error: error.toString(),
                   ),
                 ),
-                titlePadding: const EdgeInsets.only(left: 36.0, bottom: 16.0),
+                titlePadding: const EdgeInsetsDirectional.only(start: 36.0, bottom: 16.0),
                 title: Container(
                   decoration: BoxDecoration(
                     borderRadius: BaseBorderRadiusDirectional.start(),
                     color: Theme.of(context).primaryColor.withAlpha(150),
                   ),
                   width: MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.only(left: 25.0),
+                  padding: const EdgeInsetsDirectional.only(start: 25.0, top: 2.0, bottom: 2.0),
                   child: Text(
-                    movie?.title ?? movie?.name ?? '',
+                    movie.title ?? movie.name ?? '',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(fontSize: 18),
@@ -80,10 +81,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
           child: NotificationListener<OverscrollIndicatorNotification>(
             onNotification: (overScrollIndicatorNotification) {
               overScrollIndicatorNotification.disallowGlow();
-              return;
+              return true;
             },
             child: SingleChildScrollView(
-              physics: NeverScrollableScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -96,14 +96,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       ),
                       TransparentVerticalDivider(width: 2),
                       Text(
-                        movie?.voteAverage.toString() ?? '',
+                        movie.voteAverage.toString(),
                         style: TextStyle(
                           fontSize: 18.0,
                         ),
                       ),
                       TransparentVerticalDivider(width: 20),
                       Text(
-                        movie?.releaseDate ?? '',
+                        movie.releaseDate ?? '',
                         style: TextStyle(
                           fontSize: 18.0,
                         ),
@@ -114,61 +114,62 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     height: 16,
                   ),
                   Text(
-                    movie?.overview ?? '',
+                    movie.overview ?? '',
                     style: TextStyle(),
                   ),
                   TransparentDivider(height: 16.0),
-                  ResultStateBuilder<TrailersProvider, Trailer>(
-                    builder: (context, trailersResponse, child) {
-                      if (trailersResponse != null && trailersResponse.results.length > 0) {
-                        return Container(
-                          height: 150,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                'Videos',
-                                style: Theme.of(context).textTheme.headline6,
-                              ),
-                              Expanded(
-                                child: ListView.builder(
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: trailersResponse?.results?.length,
-                                  itemBuilder: (BuildContext context, int index) => Container(
-                                    margin: EdgeInsets.only(
-                                      top: 4.0,
-                                      bottom: 4.0,
-                                      left: (index == 0) ? 0.0 : 4.0,
-                                      right:
-                                          (index == (trailersResponse?.results?.length ?? 0) - 1) ? 0.0 : 4.0,
+                  Container(
+                    child: ResultStateBuilder<TrailersProvider, Trailer>(
+                      builder: (context, trailersResponse, child) {
+                        if (trailersResponse.results.length > 0) {
+                          return Container(
+                            height: 150,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  AppLocalizations.of(context).videos,
+                                  style: Theme.of(context).textTheme.headline6,
+                                ),
+                                Expanded(
+                                  child: ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: trailersResponse.results.length,
+                                    itemBuilder: (BuildContext context, int index) => Container(
+                                      margin: EdgeInsetsDirectional.only(
+                                        top: 4.0,
+                                        bottom: 4.0,
+                                        start: (index == 0) ? 0.0 : 4.0,
+                                        end: (index == (trailersResponse.results.length) - 1) ? 0.0 : 4.0,
+                                      ),
+                                      child: TrailerItem(trailersResponse.results[index]),
                                     ),
-                                    child: TrailerItem(trailersResponse.results[index]),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        );
-                      }
-                      return Container();
-                    },
+                              ],
+                            ),
+                          );
+                        }
+                        return Container();
+                      },
+                    ),
                   ),
                   Container(
                     child: ResultStateBuilder<ReviewsProvider, Review>(
                       builder: (context, reviewsResponse, child) {
-                        if (reviewsResponse != null && reviewsResponse.results.length > 0) {
+                        if (reviewsResponse.results.length > 0) {
                           return ListView.builder(
                             shrinkWrap: true,
                             padding: EdgeInsets.only(top: 0),
-                            itemCount: reviewsResponse?.results?.length,
+                            itemCount: reviewsResponse.results.length,
                             physics: NeverScrollableScrollPhysics(),
                             itemBuilder: (BuildContext context, int index) => Container(
                               margin: EdgeInsets.only(
                                 top: (index == 0) ? 0.0 : 4.0,
-                                bottom: (index == (reviewsResponse?.results?.length ?? 0) - 1) ? 0.0 : 4.0,
+                                bottom: (index == (reviewsResponse.results.length) - 1) ? 0.0 : 4.0,
                               ),
-                              child: ReviewItem(reviewsResponse?.results[index]),
+                              child: ReviewItem(reviewsResponse.results[index]),
                             ),
                           );
                         }

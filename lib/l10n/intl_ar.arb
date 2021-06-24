@@ -1,0 +1,154 @@
+{
+  "@@locale": "ar",
+  "appTitle": "أفلامي",
+  "@appTitle": {
+    "description": "Application Title"
+  },
+  "badRequest": "اقتراح غير جيد",
+  "@badRequest": {
+    "description": "Bad Request Error"
+  },
+  "connectionRequestTimeout": "انتهت مهلة طلب الاتصال",
+  "@connectionRequestTimeout": {
+    "description": "Connection Request Timeout Error"
+  },
+  "country": "الدولة",
+  "@country": {
+    "description": "Country title"
+  },
+  "errorDueToAConflict": "خطأ بسبب التعارض",
+  "@errorDueToAConflict": {
+    "description": "Error Due To A Conflict Error"
+  },
+  "errorOccurred": "حدث خطأ: {error}",
+  "@errorOccurred": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "errorOccurredError": "حدث خطأ: $ error",
+  "@errorOccurredError": {},
+  "favorites": "المفضلة",
+  "@favorites": {
+    "description": "Favorites page title"
+  },
+  "home": "الصفحة الرئيسية",
+  "@home": {
+    "description": "Home page title"
+  },
+  "internalServerError": "خطأ في الخادم الداخلي",
+  "@internalServerError": {
+    "description": "Internal Server Error Error"
+  },
+  "language": "اللغة",
+  "@language": {
+    "description": "Language key"
+  },
+  "localization": "اللغة والدولة",
+  "@localization": {
+    "description": "Localization title"
+  },
+  "methodAllowed": "الطريقة المسموح بها",
+  "@methodAllowed": {
+    "description": "Method Allowed Error"
+  },
+  "movie": "فيلم",
+  "@movie": {
+    "description": "Movie tab title"
+  },
+  "movies": "أفلام",
+  "@movies": {
+    "description": "Movies title"
+  },
+  "noInternetConnection": "لا يوجد اتصال بالإنترنت",
+  "@noInternetConnection": {
+    "description": "No Internet Connection Error"
+  },
+  "notAcceptable": "غير مقبول",
+  "@notAcceptable": {
+    "description": "Not Acceptable Error"
+  },
+  "notFound": "غير معثور عليه",
+  "@notFound": {},
+  "notImplemented": "لم يتم تنفيذه",
+  "@notImplemented": {
+    "description": "Not Implemented Error"
+  },
+  "profile": "الملف الشخصي",
+  "@profile": {
+    "description": "Profile page Title"
+  },
+  "receivedInvalidStatusCode": "تم استلام رمز حالة غير صالح: {responseCode}",
+  "@receivedInvalidStatusCode": {
+    "placeholders": {
+      "responseCode": {}
+    }
+  },
+  "requestCancelled": "تم إلغاء الطلب",
+  "@requestCancelled": {
+    "description": "Request Cancelled Error"
+  },
+  "search": "بحث",
+  "@search": {
+    "description": "Search page title"
+  },
+  "searchHint": "بحث...",
+  "@searchHint": {
+    "description": "Search hint"
+  },
+  "selectCountry": "حدد الدولة",
+  "@selectCountry": {
+    "description": "Select Country title"
+  },
+  "selectLanguage": "أختر اللغة",
+  "@selectLanguage": {
+    "description": "Select Language title"
+  },
+  "selectLocale": "{localeName, select, en{English} ar{العربية} other{Other}}",
+  "@selectLocale": {
+    "placeholders": {
+      "localeName": {}
+    }
+  },
+  "sendTimeoutInConnectionWithApiServer": "إرسال المهلة فيما يتعلق بخادم API",
+  "@sendTimeoutInConnectionWithApiServer": {
+    "description": "Send Timeout In Connection With Api Server Error"
+  },
+  "serviceUnavailable": "الخدمة غير متوفرة",
+  "@serviceUnavailable": {
+    "description": "Service Unavailable Error"
+  },
+  "tv": "مسلسبلات",
+  "@tv": {
+    "description": "TV Title"
+  },
+  "unableToProcessTheData": "غير قادر على معالجة البيانات",
+  "@unableToProcessTheData": {
+    "description": "Unable To Process The Data Error"
+  },
+  "unauthorizedRequest": "طلب غير مصرح به",
+  "@unauthorizedRequest": {
+    "description": "Unauthorized Request Error"
+  },
+  "unexpectedErrorOccurred": "حدث خطأ غير متوقع",
+  "@unexpectedErrorOccurred": {
+    "description": "Unexpected Error Occurred Error"
+  },
+  "videos": "فيديو",
+  "@videos": {},
+  "mainPathTitle": "{path, select, movie{أفلام} tv{مسلسلات} other{Other}}",
+  "@mainPathTitle": {
+    "placeholders": {
+      "path": {
+
+      }
+    }
+  },
+  "typePathTitle": "{path, select, popular{الأكثر شهرة} top_rated{الأعلى تقييما} upcoming{قريبا} now_playing{يعرض حاليا} other{Other}}",
+  "@typePathTitle": {
+    "placeholders": {
+      "path": {
+      }
+    }
+  }
+}

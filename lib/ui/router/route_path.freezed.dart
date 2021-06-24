@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'route_path.dart';
 
@@ -9,18 +9,19 @@ part of 'route_path.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$RoutePathTearOff {
   const _$RoutePathTearOff();
 
-// ignore: unused_element
   HomeRoutePath homeRoutePath({String location = '/'}) {
     return HomeRoutePath(
       location: location,
     );
   }
 
-// ignore: unused_element
   DetailsRoutePath detailsRoutePath({String location = '/details'}) {
     return DetailsRoutePath(
       location: location,
@@ -29,38 +30,42 @@ class _$RoutePathTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RoutePath = _$RoutePathTearOff();
 
 /// @nodoc
 mixin _$RoutePath {
-  String get location;
+  String get location => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult homeRoutePath(String location),
-    @required TResult detailsRoutePath(String location),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(String location) homeRoutePath,
+    required TResult Function(String location) detailsRoutePath,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult homeRoutePath(String location),
-    TResult detailsRoutePath(String location),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String location)? homeRoutePath,
+    TResult Function(String location)? detailsRoutePath,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult homeRoutePath(HomeRoutePath value),
-    @required TResult detailsRoutePath(DetailsRoutePath value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeRoutePath value) homeRoutePath,
+    required TResult Function(DetailsRoutePath value) detailsRoutePath,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult homeRoutePath(HomeRoutePath value),
-    TResult detailsRoutePath(DetailsRoutePath value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeRoutePath value)? homeRoutePath,
+    TResult Function(DetailsRoutePath value)? detailsRoutePath,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RoutePathCopyWith<RoutePath> get copyWith;
+  $RoutePathCopyWith<RoutePath> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -80,10 +85,13 @@ class _$RoutePathCopyWithImpl<$Res> implements $RoutePathCopyWith<$Res> {
 
   @override
   $Res call({
-    Object location = freezed,
+    Object? location = freezed,
   }) {
     return _then(_value.copyWith(
-      location: location == freezed ? _value.location : location as String,
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -110,17 +118,21 @@ class _$HomeRoutePathCopyWithImpl<$Res> extends _$RoutePathCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object location = freezed,
+    Object? location = freezed,
   }) {
     return _then(HomeRoutePath(
-      location: location == freezed ? _value.location : location as String,
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$HomeRoutePath implements HomeRoutePath {
-  const _$HomeRoutePath({this.location = '/'}) : assert(location != null);
+  const _$HomeRoutePath({this.location = '/'});
 
   @JsonKey(defaultValue: '/')
   @override
@@ -151,23 +163,20 @@ class _$HomeRoutePath implements HomeRoutePath {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult homeRoutePath(String location),
-    @required TResult detailsRoutePath(String location),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String location) homeRoutePath,
+    required TResult Function(String location) detailsRoutePath,
   }) {
-    assert(homeRoutePath != null);
-    assert(detailsRoutePath != null);
     return homeRoutePath(location);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult homeRoutePath(String location),
-    TResult detailsRoutePath(String location),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String location)? homeRoutePath,
+    TResult Function(String location)? detailsRoutePath,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (homeRoutePath != null) {
       return homeRoutePath(location);
     }
@@ -176,23 +185,20 @@ class _$HomeRoutePath implements HomeRoutePath {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult homeRoutePath(HomeRoutePath value),
-    @required TResult detailsRoutePath(DetailsRoutePath value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeRoutePath value) homeRoutePath,
+    required TResult Function(DetailsRoutePath value) detailsRoutePath,
   }) {
-    assert(homeRoutePath != null);
-    assert(detailsRoutePath != null);
     return homeRoutePath(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult homeRoutePath(HomeRoutePath value),
-    TResult detailsRoutePath(DetailsRoutePath value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeRoutePath value)? homeRoutePath,
+    TResult Function(DetailsRoutePath value)? detailsRoutePath,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (homeRoutePath != null) {
       return homeRoutePath(this);
     }
@@ -204,10 +210,11 @@ abstract class HomeRoutePath implements RoutePath {
   const factory HomeRoutePath({String location}) = _$HomeRoutePath;
 
   @override
-  String get location;
+  String get location => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $HomeRoutePathCopyWith<HomeRoutePath> get copyWith;
+  $HomeRoutePathCopyWith<HomeRoutePath> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -232,18 +239,21 @@ class _$DetailsRoutePathCopyWithImpl<$Res> extends _$RoutePathCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object location = freezed,
+    Object? location = freezed,
   }) {
     return _then(DetailsRoutePath(
-      location: location == freezed ? _value.location : location as String,
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$DetailsRoutePath implements DetailsRoutePath {
-  const _$DetailsRoutePath({this.location = '/details'})
-      : assert(location != null);
+  const _$DetailsRoutePath({this.location = '/details'});
 
   @JsonKey(defaultValue: '/details')
   @override
@@ -274,23 +284,20 @@ class _$DetailsRoutePath implements DetailsRoutePath {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult homeRoutePath(String location),
-    @required TResult detailsRoutePath(String location),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String location) homeRoutePath,
+    required TResult Function(String location) detailsRoutePath,
   }) {
-    assert(homeRoutePath != null);
-    assert(detailsRoutePath != null);
     return detailsRoutePath(location);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult homeRoutePath(String location),
-    TResult detailsRoutePath(String location),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String location)? homeRoutePath,
+    TResult Function(String location)? detailsRoutePath,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (detailsRoutePath != null) {
       return detailsRoutePath(location);
     }
@@ -299,23 +306,20 @@ class _$DetailsRoutePath implements DetailsRoutePath {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult homeRoutePath(HomeRoutePath value),
-    @required TResult detailsRoutePath(DetailsRoutePath value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeRoutePath value) homeRoutePath,
+    required TResult Function(DetailsRoutePath value) detailsRoutePath,
   }) {
-    assert(homeRoutePath != null);
-    assert(detailsRoutePath != null);
     return detailsRoutePath(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult homeRoutePath(HomeRoutePath value),
-    TResult detailsRoutePath(DetailsRoutePath value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeRoutePath value)? homeRoutePath,
+    TResult Function(DetailsRoutePath value)? detailsRoutePath,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (detailsRoutePath != null) {
       return detailsRoutePath(this);
     }
@@ -327,8 +331,9 @@ abstract class DetailsRoutePath implements RoutePath {
   const factory DetailsRoutePath({String location}) = _$DetailsRoutePath;
 
   @override
-  String get location;
+  String get location => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $DetailsRoutePathCopyWith<DetailsRoutePath> get copyWith;
+  $DetailsRoutePathCopyWith<DetailsRoutePath> get copyWith =>
+      throw _privateConstructorUsedError;
 }

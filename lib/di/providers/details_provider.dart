@@ -1,11 +1,11 @@
 import 'package:state_notifier/state_notifier.dart';
 import 'package:tester_app/data/details_repository.dart';
 import 'package:tester_app/di/providers/path_providers/path_provider.dart';
-import 'package:tester_app/models/response_type/response_type.dart';
+import 'package:tester_app/models/response_type/models.dart';
 import 'package:tester_app/models/result_state/result_state.dart';
 
 class DetailsProvider extends StateNotifier<Movie> {
-  DetailsProvider() : super(const Movie());
+  DetailsProvider() : super(const Movie(id: -1));
 
   Movie get movie => state;
 

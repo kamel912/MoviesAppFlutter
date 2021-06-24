@@ -4,8 +4,8 @@ class TransparentDivider extends StatelessWidget {
   final double height;
 
   const TransparentDivider({
-    Key key,
-    @required this.height,
+    Key? key,
+    required this.height,
   }) : super(key: key);
 
   @override
@@ -19,8 +19,8 @@ class TransparentVerticalDivider extends StatelessWidget {
   final double width;
 
   const TransparentVerticalDivider({
-    Key key,
-    @required this.width,
+    Key? key,
+    required this.width,
   }) : super(key: key);
 
   @override

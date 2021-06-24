@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:tester_app/di/providers/navigation_provider.dart';
+import 'package:tester_app/localization/l10n.dart';
 import 'package:tester_app/ui/base_widgets/base_constants/base_border.dart';
 
 class MoviesDBBottomNavigationBar extends StatefulWidget {
@@ -26,27 +27,27 @@ class _MoviesDBBottomNavigationBarState extends State<MoviesDBBottomNavigationBa
               BottomBarItem(
                 iconData: Icons.person_outline,
                 activeIconData: Icons.person,
-                label: 'Profile',
+                label: AppLocalizations.of(context).profile,
               ),
               BottomBarItem(
                 iconData: Icons.favorite_border,
                 activeIconData: Icons.favorite,
-                label: 'Favorites',
+                label: AppLocalizations.of(context).favorites,
               ),
               BottomBarItem(
                 iconData: Icons.home_outlined,
                 activeIconData: Icons.home,
-                label: 'Home',
+                label: AppLocalizations.of(context).home,
               ),
               BottomBarItem(
                 iconData: Icons.search,
                 activeIconData: Icons.search,
-                label: 'Search',
+                label: AppLocalizations.of(context).search,
               ),
               BottomBarItem(
                 iconData: Icons.settings_outlined,
                 activeIconData: Icons.settings,
-                label: 'Search',
+                label: AppLocalizations.of(context).search,
               ),
             ],
             currentIndex: currentPage,
@@ -63,9 +64,9 @@ class BottomBarItem extends BottomNavigationBarItem {
   final String label;
 
   BottomBarItem({
-    this.iconData,
-    this.activeIconData,
-    this.label,
+    required this.iconData,
+    required this.activeIconData,
+    required this.label,
   }) : super(
           icon: Icon(iconData),
           activeIcon: Icon(activeIconData),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:tester_app/models/response_type/response_type.dart';
+import 'package:tester_app/models/response_type/models.dart';
 import 'package:tester_app/ui/home_page/movies_screen/movie_item.dart';
 
 class MoviesGrid extends StatelessWidget {
   const MoviesGrid({
-    Key key,
-    @required this.movies,
-    @required this.crossAxisCount,
+    Key? key,
+    required this.movies,
+    required this.crossAxisCount,
   }) : super(key: key);
 
   final List<Movie> movies;
@@ -18,7 +18,7 @@ class MoviesGrid extends StatelessWidget {
     return NotificationListener<OverscrollIndicatorNotification>(
       onNotification: (overScrollIndicatorNotification) {
         overScrollIndicatorNotification.disallowGlow();
-        return;
+        return true;
       },
       child: GridView.count(
         crossAxisCount: crossAxisCount,

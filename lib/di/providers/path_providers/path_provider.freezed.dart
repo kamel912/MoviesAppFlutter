@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'path_provider.dart';
 
@@ -9,11 +9,13 @@ part of 'path_provider.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$MainPathTearOff {
   const _$MainPathTearOff();
 
-// ignore: unused_element
   MoviesPath movies(
       {String title = 'Movie', int index = 0, String url = 'movie'}) {
     return MoviesPath(
@@ -23,7 +25,6 @@ class _$MainPathTearOff {
     );
   }
 
-// ignore: unused_element
   TVPath tv({String title = 'TV', int index = 1, String url = 'tv'}) {
     return TVPath(
       title: title,
@@ -34,40 +35,44 @@ class _$MainPathTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $MainPath = _$MainPathTearOff();
 
 /// @nodoc
 mixin _$MainPath {
-  String get title;
-  int get index;
-  String get url;
+  String get title => throw _privateConstructorUsedError;
+  int get index => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult movies(String title, int index, String url),
-    @required TResult tv(String title, int index, String url),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, int index, String url) movies,
+    required TResult Function(String title, int index, String url) tv,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult movies(String title, int index, String url),
-    TResult tv(String title, int index, String url),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, int index, String url)? movies,
+    TResult Function(String title, int index, String url)? tv,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult movies(MoviesPath value),
-    @required TResult tv(TVPath value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(MoviesPath value) movies,
+    required TResult Function(TVPath value) tv,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult movies(MoviesPath value),
-    TResult tv(TVPath value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MoviesPath value)? movies,
+    TResult Function(TVPath value)? tv,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MainPathCopyWith<MainPath> get copyWith;
+  $MainPathCopyWith<MainPath> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -87,14 +92,23 @@ class _$MainPathCopyWithImpl<$Res> implements $MainPathCopyWith<$Res> {
 
   @override
   $Res call({
-    Object title = freezed,
-    Object index = freezed,
-    Object url = freezed,
+    Object? title = freezed,
+    Object? index = freezed,
+    Object? url = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed ? _value.title : title as String,
-      index: index == freezed ? _value.index : index as int,
-      url: url == freezed ? _value.url : url as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -119,24 +133,32 @@ class _$MoviesPathCopyWithImpl<$Res> extends _$MainPathCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object title = freezed,
-    Object index = freezed,
-    Object url = freezed,
+    Object? title = freezed,
+    Object? index = freezed,
+    Object? url = freezed,
   }) {
     return _then(MoviesPath(
-      title: title == freezed ? _value.title : title as String,
-      index: index == freezed ? _value.index : index as int,
-      url: url == freezed ? _value.url : url as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$MoviesPath implements MoviesPath {
-  const _$MoviesPath({this.title = 'Movie', this.index = 0, this.url = 'movie'})
-      : assert(title != null),
-        assert(index != null),
-        assert(url != null);
+  const _$MoviesPath(
+      {this.title = 'Movie', this.index = 0, this.url = 'movie'});
 
   @JsonKey(defaultValue: 'Movie')
   @override
@@ -179,23 +201,20 @@ class _$MoviesPath implements MoviesPath {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult movies(String title, int index, String url),
-    @required TResult tv(String title, int index, String url),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, int index, String url) movies,
+    required TResult Function(String title, int index, String url) tv,
   }) {
-    assert(movies != null);
-    assert(tv != null);
     return movies(title, index, url);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult movies(String title, int index, String url),
-    TResult tv(String title, int index, String url),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, int index, String url)? movies,
+    TResult Function(String title, int index, String url)? tv,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (movies != null) {
       return movies(title, index, url);
     }
@@ -204,23 +223,20 @@ class _$MoviesPath implements MoviesPath {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult movies(MoviesPath value),
-    @required TResult tv(TVPath value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(MoviesPath value) movies,
+    required TResult Function(TVPath value) tv,
   }) {
-    assert(movies != null);
-    assert(tv != null);
     return movies(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult movies(MoviesPath value),
-    TResult tv(TVPath value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MoviesPath value)? movies,
+    TResult Function(TVPath value)? tv,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (movies != null) {
       return movies(this);
     }
@@ -233,14 +249,15 @@ abstract class MoviesPath implements MainPath {
       _$MoviesPath;
 
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  int get index;
+  int get index => throw _privateConstructorUsedError;
   @override
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $MoviesPathCopyWith<MoviesPath> get copyWith;
+  $MoviesPathCopyWith<MoviesPath> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -262,24 +279,31 @@ class _$TVPathCopyWithImpl<$Res> extends _$MainPathCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object title = freezed,
-    Object index = freezed,
-    Object url = freezed,
+    Object? title = freezed,
+    Object? index = freezed,
+    Object? url = freezed,
   }) {
     return _then(TVPath(
-      title: title == freezed ? _value.title : title as String,
-      index: index == freezed ? _value.index : index as int,
-      url: url == freezed ? _value.url : url as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$TVPath implements TVPath {
-  const _$TVPath({this.title = 'TV', this.index = 1, this.url = 'tv'})
-      : assert(title != null),
-        assert(index != null),
-        assert(url != null);
+  const _$TVPath({this.title = 'TV', this.index = 1, this.url = 'tv'});
 
   @JsonKey(defaultValue: 'TV')
   @override
@@ -322,23 +346,20 @@ class _$TVPath implements TVPath {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult movies(String title, int index, String url),
-    @required TResult tv(String title, int index, String url),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, int index, String url) movies,
+    required TResult Function(String title, int index, String url) tv,
   }) {
-    assert(movies != null);
-    assert(tv != null);
     return tv(title, index, url);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult movies(String title, int index, String url),
-    TResult tv(String title, int index, String url),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, int index, String url)? movies,
+    TResult Function(String title, int index, String url)? tv,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tv != null) {
       return tv(title, index, url);
     }
@@ -347,23 +368,20 @@ class _$TVPath implements TVPath {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult movies(MoviesPath value),
-    @required TResult tv(TVPath value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(MoviesPath value) movies,
+    required TResult Function(TVPath value) tv,
   }) {
-    assert(movies != null);
-    assert(tv != null);
     return tv(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult movies(MoviesPath value),
-    TResult tv(TVPath value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MoviesPath value)? movies,
+    TResult Function(TVPath value)? tv,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tv != null) {
       return tv(this);
     }
@@ -375,21 +393,20 @@ abstract class TVPath implements MainPath {
   const factory TVPath({String title, int index, String url}) = _$TVPath;
 
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  int get index;
+  int get index => throw _privateConstructorUsedError;
   @override
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $TVPathCopyWith<TVPath> get copyWith;
+  $TVPathCopyWith<TVPath> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$TypePathTearOff {
   const _$TypePathTearOff();
 
-// ignore: unused_element
   Popular popular(
       {String title = 'Popular', int index = 0, String url = 'popular'}) {
     return Popular(
@@ -399,7 +416,6 @@ class _$TypePathTearOff {
     );
   }
 
-// ignore: unused_element
   TopRated topRated(
       {String title = 'Top rated', int index = 1, String url = 'top_rated'}) {
     return TopRated(
@@ -409,7 +425,6 @@ class _$TypePathTearOff {
     );
   }
 
-// ignore: unused_element
   Upcoming upcoming(
       {String title = 'Upcoming', int index = 2, String url = 'upcoming'}) {
     return Upcoming(
@@ -419,7 +434,6 @@ class _$TypePathTearOff {
     );
   }
 
-// ignore: unused_element
   NowPlaying nowPlaying(
       {String title = 'Now playing',
       int index = 3,
@@ -433,48 +447,52 @@ class _$TypePathTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $TypePath = _$TypePathTearOff();
 
 /// @nodoc
 mixin _$TypePath {
-  String get title;
-  int get index;
-  String get url;
+  String get title => throw _privateConstructorUsedError;
+  int get index => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult popular(String title, int index, String url),
-    @required TResult topRated(String title, int index, String url),
-    @required TResult upcoming(String title, int index, String url),
-    @required TResult nowPlaying(String title, int index, String url),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, int index, String url) popular,
+    required TResult Function(String title, int index, String url) topRated,
+    required TResult Function(String title, int index, String url) upcoming,
+    required TResult Function(String title, int index, String url) nowPlaying,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult popular(String title, int index, String url),
-    TResult topRated(String title, int index, String url),
-    TResult upcoming(String title, int index, String url),
-    TResult nowPlaying(String title, int index, String url),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, int index, String url)? popular,
+    TResult Function(String title, int index, String url)? topRated,
+    TResult Function(String title, int index, String url)? upcoming,
+    TResult Function(String title, int index, String url)? nowPlaying,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult popular(Popular value),
-    @required TResult topRated(TopRated value),
-    @required TResult upcoming(Upcoming value),
-    @required TResult nowPlaying(NowPlaying value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(Popular value) popular,
+    required TResult Function(TopRated value) topRated,
+    required TResult Function(Upcoming value) upcoming,
+    required TResult Function(NowPlaying value) nowPlaying,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult popular(Popular value),
-    TResult topRated(TopRated value),
-    TResult upcoming(Upcoming value),
-    TResult nowPlaying(NowPlaying value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Popular value)? popular,
+    TResult Function(TopRated value)? topRated,
+    TResult Function(Upcoming value)? upcoming,
+    TResult Function(NowPlaying value)? nowPlaying,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TypePathCopyWith<TypePath> get copyWith;
+  $TypePathCopyWith<TypePath> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -494,14 +512,23 @@ class _$TypePathCopyWithImpl<$Res> implements $TypePathCopyWith<$Res> {
 
   @override
   $Res call({
-    Object title = freezed,
-    Object index = freezed,
-    Object url = freezed,
+    Object? title = freezed,
+    Object? index = freezed,
+    Object? url = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed ? _value.title : title as String,
-      index: index == freezed ? _value.index : index as int,
-      url: url == freezed ? _value.url : url as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -525,25 +552,32 @@ class _$PopularCopyWithImpl<$Res> extends _$TypePathCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object title = freezed,
-    Object index = freezed,
-    Object url = freezed,
+    Object? title = freezed,
+    Object? index = freezed,
+    Object? url = freezed,
   }) {
     return _then(Popular(
-      title: title == freezed ? _value.title : title as String,
-      index: index == freezed ? _value.index : index as int,
-      url: url == freezed ? _value.url : url as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$Popular implements Popular {
   const _$Popular(
-      {this.title = 'Popular', this.index = 0, this.url = 'popular'})
-      : assert(title != null),
-        assert(index != null),
-        assert(url != null);
+      {this.title = 'Popular', this.index = 0, this.url = 'popular'});
 
   @JsonKey(defaultValue: 'Popular')
   @override
@@ -586,29 +620,24 @@ class _$Popular implements Popular {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult popular(String title, int index, String url),
-    @required TResult topRated(String title, int index, String url),
-    @required TResult upcoming(String title, int index, String url),
-    @required TResult nowPlaying(String title, int index, String url),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, int index, String url) popular,
+    required TResult Function(String title, int index, String url) topRated,
+    required TResult Function(String title, int index, String url) upcoming,
+    required TResult Function(String title, int index, String url) nowPlaying,
   }) {
-    assert(popular != null);
-    assert(topRated != null);
-    assert(upcoming != null);
-    assert(nowPlaying != null);
     return popular(title, index, url);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult popular(String title, int index, String url),
-    TResult topRated(String title, int index, String url),
-    TResult upcoming(String title, int index, String url),
-    TResult nowPlaying(String title, int index, String url),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, int index, String url)? popular,
+    TResult Function(String title, int index, String url)? topRated,
+    TResult Function(String title, int index, String url)? upcoming,
+    TResult Function(String title, int index, String url)? nowPlaying,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (popular != null) {
       return popular(title, index, url);
     }
@@ -617,29 +646,24 @@ class _$Popular implements Popular {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult popular(Popular value),
-    @required TResult topRated(TopRated value),
-    @required TResult upcoming(Upcoming value),
-    @required TResult nowPlaying(NowPlaying value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(Popular value) popular,
+    required TResult Function(TopRated value) topRated,
+    required TResult Function(Upcoming value) upcoming,
+    required TResult Function(NowPlaying value) nowPlaying,
   }) {
-    assert(popular != null);
-    assert(topRated != null);
-    assert(upcoming != null);
-    assert(nowPlaying != null);
     return popular(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult popular(Popular value),
-    TResult topRated(TopRated value),
-    TResult upcoming(Upcoming value),
-    TResult nowPlaying(NowPlaying value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Popular value)? popular,
+    TResult Function(TopRated value)? topRated,
+    TResult Function(Upcoming value)? upcoming,
+    TResult Function(NowPlaying value)? nowPlaying,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (popular != null) {
       return popular(this);
     }
@@ -651,14 +675,14 @@ abstract class Popular implements TypePath {
   const factory Popular({String title, int index, String url}) = _$Popular;
 
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  int get index;
+  int get index => throw _privateConstructorUsedError;
   @override
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $PopularCopyWith<Popular> get copyWith;
+  $PopularCopyWith<Popular> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -680,25 +704,32 @@ class _$TopRatedCopyWithImpl<$Res> extends _$TypePathCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object title = freezed,
-    Object index = freezed,
-    Object url = freezed,
+    Object? title = freezed,
+    Object? index = freezed,
+    Object? url = freezed,
   }) {
     return _then(TopRated(
-      title: title == freezed ? _value.title : title as String,
-      index: index == freezed ? _value.index : index as int,
-      url: url == freezed ? _value.url : url as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$TopRated implements TopRated {
   const _$TopRated(
-      {this.title = 'Top rated', this.index = 1, this.url = 'top_rated'})
-      : assert(title != null),
-        assert(index != null),
-        assert(url != null);
+      {this.title = 'Top rated', this.index = 1, this.url = 'top_rated'});
 
   @JsonKey(defaultValue: 'Top rated')
   @override
@@ -741,29 +772,24 @@ class _$TopRated implements TopRated {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult popular(String title, int index, String url),
-    @required TResult topRated(String title, int index, String url),
-    @required TResult upcoming(String title, int index, String url),
-    @required TResult nowPlaying(String title, int index, String url),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, int index, String url) popular,
+    required TResult Function(String title, int index, String url) topRated,
+    required TResult Function(String title, int index, String url) upcoming,
+    required TResult Function(String title, int index, String url) nowPlaying,
   }) {
-    assert(popular != null);
-    assert(topRated != null);
-    assert(upcoming != null);
-    assert(nowPlaying != null);
     return topRated(title, index, url);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult popular(String title, int index, String url),
-    TResult topRated(String title, int index, String url),
-    TResult upcoming(String title, int index, String url),
-    TResult nowPlaying(String title, int index, String url),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, int index, String url)? popular,
+    TResult Function(String title, int index, String url)? topRated,
+    TResult Function(String title, int index, String url)? upcoming,
+    TResult Function(String title, int index, String url)? nowPlaying,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (topRated != null) {
       return topRated(title, index, url);
     }
@@ -772,29 +798,24 @@ class _$TopRated implements TopRated {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult popular(Popular value),
-    @required TResult topRated(TopRated value),
-    @required TResult upcoming(Upcoming value),
-    @required TResult nowPlaying(NowPlaying value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(Popular value) popular,
+    required TResult Function(TopRated value) topRated,
+    required TResult Function(Upcoming value) upcoming,
+    required TResult Function(NowPlaying value) nowPlaying,
   }) {
-    assert(popular != null);
-    assert(topRated != null);
-    assert(upcoming != null);
-    assert(nowPlaying != null);
     return topRated(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult popular(Popular value),
-    TResult topRated(TopRated value),
-    TResult upcoming(Upcoming value),
-    TResult nowPlaying(NowPlaying value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Popular value)? popular,
+    TResult Function(TopRated value)? topRated,
+    TResult Function(Upcoming value)? upcoming,
+    TResult Function(NowPlaying value)? nowPlaying,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (topRated != null) {
       return topRated(this);
     }
@@ -806,14 +827,15 @@ abstract class TopRated implements TypePath {
   const factory TopRated({String title, int index, String url}) = _$TopRated;
 
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  int get index;
+  int get index => throw _privateConstructorUsedError;
   @override
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $TopRatedCopyWith<TopRated> get copyWith;
+  $TopRatedCopyWith<TopRated> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -835,25 +857,32 @@ class _$UpcomingCopyWithImpl<$Res> extends _$TypePathCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object title = freezed,
-    Object index = freezed,
-    Object url = freezed,
+    Object? title = freezed,
+    Object? index = freezed,
+    Object? url = freezed,
   }) {
     return _then(Upcoming(
-      title: title == freezed ? _value.title : title as String,
-      index: index == freezed ? _value.index : index as int,
-      url: url == freezed ? _value.url : url as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$Upcoming implements Upcoming {
   const _$Upcoming(
-      {this.title = 'Upcoming', this.index = 2, this.url = 'upcoming'})
-      : assert(title != null),
-        assert(index != null),
-        assert(url != null);
+      {this.title = 'Upcoming', this.index = 2, this.url = 'upcoming'});
 
   @JsonKey(defaultValue: 'Upcoming')
   @override
@@ -896,29 +925,24 @@ class _$Upcoming implements Upcoming {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult popular(String title, int index, String url),
-    @required TResult topRated(String title, int index, String url),
-    @required TResult upcoming(String title, int index, String url),
-    @required TResult nowPlaying(String title, int index, String url),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, int index, String url) popular,
+    required TResult Function(String title, int index, String url) topRated,
+    required TResult Function(String title, int index, String url) upcoming,
+    required TResult Function(String title, int index, String url) nowPlaying,
   }) {
-    assert(popular != null);
-    assert(topRated != null);
-    assert(upcoming != null);
-    assert(nowPlaying != null);
     return upcoming(title, index, url);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult popular(String title, int index, String url),
-    TResult topRated(String title, int index, String url),
-    TResult upcoming(String title, int index, String url),
-    TResult nowPlaying(String title, int index, String url),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, int index, String url)? popular,
+    TResult Function(String title, int index, String url)? topRated,
+    TResult Function(String title, int index, String url)? upcoming,
+    TResult Function(String title, int index, String url)? nowPlaying,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (upcoming != null) {
       return upcoming(title, index, url);
     }
@@ -927,29 +951,24 @@ class _$Upcoming implements Upcoming {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult popular(Popular value),
-    @required TResult topRated(TopRated value),
-    @required TResult upcoming(Upcoming value),
-    @required TResult nowPlaying(NowPlaying value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(Popular value) popular,
+    required TResult Function(TopRated value) topRated,
+    required TResult Function(Upcoming value) upcoming,
+    required TResult Function(NowPlaying value) nowPlaying,
   }) {
-    assert(popular != null);
-    assert(topRated != null);
-    assert(upcoming != null);
-    assert(nowPlaying != null);
     return upcoming(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult popular(Popular value),
-    TResult topRated(TopRated value),
-    TResult upcoming(Upcoming value),
-    TResult nowPlaying(NowPlaying value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Popular value)? popular,
+    TResult Function(TopRated value)? topRated,
+    TResult Function(Upcoming value)? upcoming,
+    TResult Function(NowPlaying value)? nowPlaying,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (upcoming != null) {
       return upcoming(this);
     }
@@ -961,14 +980,15 @@ abstract class Upcoming implements TypePath {
   const factory Upcoming({String title, int index, String url}) = _$Upcoming;
 
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  int get index;
+  int get index => throw _privateConstructorUsedError;
   @override
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $UpcomingCopyWith<Upcoming> get copyWith;
+  $UpcomingCopyWith<Upcoming> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -991,25 +1011,32 @@ class _$NowPlayingCopyWithImpl<$Res> extends _$TypePathCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object title = freezed,
-    Object index = freezed,
-    Object url = freezed,
+    Object? title = freezed,
+    Object? index = freezed,
+    Object? url = freezed,
   }) {
     return _then(NowPlaying(
-      title: title == freezed ? _value.title : title as String,
-      index: index == freezed ? _value.index : index as int,
-      url: url == freezed ? _value.url : url as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$NowPlaying implements NowPlaying {
   const _$NowPlaying(
-      {this.title = 'Now playing', this.index = 3, this.url = 'now_playing'})
-      : assert(title != null),
-        assert(index != null),
-        assert(url != null);
+      {this.title = 'Now playing', this.index = 3, this.url = 'now_playing'});
 
   @JsonKey(defaultValue: 'Now playing')
   @override
@@ -1052,29 +1079,24 @@ class _$NowPlaying implements NowPlaying {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult popular(String title, int index, String url),
-    @required TResult topRated(String title, int index, String url),
-    @required TResult upcoming(String title, int index, String url),
-    @required TResult nowPlaying(String title, int index, String url),
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, int index, String url) popular,
+    required TResult Function(String title, int index, String url) topRated,
+    required TResult Function(String title, int index, String url) upcoming,
+    required TResult Function(String title, int index, String url) nowPlaying,
   }) {
-    assert(popular != null);
-    assert(topRated != null);
-    assert(upcoming != null);
-    assert(nowPlaying != null);
     return nowPlaying(title, index, url);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult popular(String title, int index, String url),
-    TResult topRated(String title, int index, String url),
-    TResult upcoming(String title, int index, String url),
-    TResult nowPlaying(String title, int index, String url),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, int index, String url)? popular,
+    TResult Function(String title, int index, String url)? topRated,
+    TResult Function(String title, int index, String url)? upcoming,
+    TResult Function(String title, int index, String url)? nowPlaying,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (nowPlaying != null) {
       return nowPlaying(title, index, url);
     }
@@ -1083,29 +1105,24 @@ class _$NowPlaying implements NowPlaying {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult popular(Popular value),
-    @required TResult topRated(TopRated value),
-    @required TResult upcoming(Upcoming value),
-    @required TResult nowPlaying(NowPlaying value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(Popular value) popular,
+    required TResult Function(TopRated value) topRated,
+    required TResult Function(Upcoming value) upcoming,
+    required TResult Function(NowPlaying value) nowPlaying,
   }) {
-    assert(popular != null);
-    assert(topRated != null);
-    assert(upcoming != null);
-    assert(nowPlaying != null);
     return nowPlaying(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult popular(Popular value),
-    TResult topRated(TopRated value),
-    TResult upcoming(Upcoming value),
-    TResult nowPlaying(NowPlaying value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Popular value)? popular,
+    TResult Function(TopRated value)? topRated,
+    TResult Function(Upcoming value)? upcoming,
+    TResult Function(NowPlaying value)? nowPlaying,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (nowPlaying != null) {
       return nowPlaying(this);
     }
@@ -1118,12 +1135,13 @@ abstract class NowPlaying implements TypePath {
       _$NowPlaying;
 
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  int get index;
+  int get index => throw _privateConstructorUsedError;
   @override
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $NowPlayingCopyWith<NowPlaying> get copyWith;
+  $NowPlayingCopyWith<NowPlaying> get copyWith =>
+      throw _privateConstructorUsedError;
 }

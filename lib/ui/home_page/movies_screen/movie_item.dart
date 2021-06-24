@@ -1,12 +1,16 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:tester_app/data/api/base_urls.dart';
 import 'package:tester_app/di/providers/details_provider.dart';
-import 'package:tester_app/models/response_type/response_type.dart';
+import 'package:tester_app/di/providers/path_providers/path_provider.dart';
+import 'package:tester_app/models/response_type/models.dart';
 import 'package:tester_app/ui/base_widgets/base_constants/base_border.dart';
 import 'package:tester_app/ui/router/route_path.dart';
 import 'package:tester_app/ui/router/router_provider.dart';
+import 'package:tester_app/utils/hive_utils.dart';
 import 'package:tester_app/utils/movies_db_extensions.dart';
 
 class MovieItem extends StatelessWidget {
@@ -14,7 +18,7 @@ class MovieItem extends StatelessWidget {
   final GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
 
   MovieItem({
-    this.movie,
+    required this.movie,
   });
 
   @override
@@ -28,9 +32,9 @@ class MovieItem extends StatelessWidget {
 
 class _ItemCardBack extends StatelessWidget {
   const _ItemCardBack({
-    Key key,
-    @required this.movie,
-    @required this.cardKey,
+    Key? key,
+    required this.movie,
+    required this.cardKey,
   }) : super(key: key);
 
   final Movie movie;
@@ -53,7 +57,7 @@ class _ItemCardBack extends StatelessWidget {
               color: Colors.transparent,
               child: InkWell(
                 onTap: () {
-                  cardKey.currentState.toggleCard();
+                  cardKey.currentState!.toggleCard();
                 },
                 child: Icon(
                   Icons.close,
@@ -62,8 +66,9 @@ class _ItemCardBack extends StatelessWidget {
               ),
             ),
             Text(
-              movie.title ?? movie.name,
+              movie.title ?? movie.name!,
               style: TextStyle(fontWeight: FontWeight.bold),
+              maxLines: 2,
             ),
             Divider(
               height: 8.0,
@@ -71,7 +76,7 @@ class _ItemCardBack extends StatelessWidget {
             Expanded(
               child: SingleChildScrollView(
                 child: Text(
-                  movie.overview,
+                  movie.overview!,
                   style: TextStyle(fontWeight: FontWeight.w300),
                 ),
               ),
@@ -104,9 +109,9 @@ class _ItemCardBack extends StatelessWidget {
 
 class _ItemCardFront extends StatelessWidget {
   const _ItemCardFront({
-    Key key,
-    @required this.movie,
-    @required this.cardKey,
+    Key? key,
+    required this.movie,
+    required this.cardKey,
   }) : super(key: key);
 
   final Movie movie;
@@ -114,6 +119,9 @@ class _ItemCardFront extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String movieKey =
+        '${movie.id}_${context.watch<Locale>().languageCode}_${context.watch<MainPath>().index}';
+    final Box<Movie> movieBox = HiveHelper.favoritesBox;
     return Stack(
       children: [
         Container(
@@ -156,9 +164,30 @@ class _ItemCardFront extends StatelessWidget {
             color: Colors.transparent,
             child: InkWell(
               onTap: () {
-                cardKey.currentState.toggleCard();
+                cardKey.currentState!.toggleCard();
               },
               child: Icon(Icons.info),
+            ),
+          ),
+        ),
+        Positioned.directional(
+          top: 8,
+          end: 8,
+          textDirection: context.watch<Locale>().textDirection,
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () {
+                movieBox.containsKey(movieKey)
+                    ? movieBox.delete(movieKey)
+                    : movieBox.put(movieKey, movie);
+              },
+              child: ValueListenableBuilder<Box<Movie>>(
+                builder: (context, box, child) {
+                  return Icon(box.containsKey(movieKey) ? Icons.favorite : Icons.favorite_border);
+                },
+                valueListenable: movieBox.listenable(),
+              ),
             ),
           ),
         ),

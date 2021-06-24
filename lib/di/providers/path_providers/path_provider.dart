@@ -6,7 +6,7 @@ import 'package:tester_app/utils/movies_db_extensions.dart';
 part 'path_provider.freezed.dart';
 
 @freezed
-abstract class MainPath with _$MainPath {
+class MainPath with _$MainPath {
   const factory MainPath.movies({
     @Default('Movie') String title,
     @Default(0) int index,
@@ -36,7 +36,7 @@ class MainPathProvider extends StateNotifier<MainPath> with LocatorMixin {
 }
 
 @freezed
-abstract class TypePath with _$TypePath {
+class TypePath with _$TypePath {
   const factory TypePath.popular({
     @Default('Popular') String title,
     @Default(0) int index,
@@ -81,10 +81,12 @@ class TypePathListProvider extends StateNotifier<List<TypePath>> with LocatorMix
     NowPlaying(),
   ];
 
-  List<TypePath> get current {
-    return state = read<MainPathProvider>().state.when(
-          movies: (_, __, ___) => baseList,
-          tv: (_, __, ___) => baseList.splitTo(2),
-        );
+  @override
+  void update(T Function<T>() watch) {
+    state = watch<MainPath>().when(
+      movies: (_, __, ___) => baseList,
+      tv: (_, __, ___) => baseList.splitTo(2),
+    );
+    super.update(watch);
   }
 }

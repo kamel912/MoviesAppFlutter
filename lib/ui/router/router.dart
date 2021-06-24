@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:tester_app/ui/details_page.dart';
-import 'package:tester_app/ui/details_page/details_screen.dart';
 import 'package:tester_app/ui/home_page.dart';
 import 'package:tester_app/ui/router/route_path.dart';
 import 'package:tester_app/ui/router/router_provider.dart';
@@ -13,11 +12,10 @@ class MoviesDBRouterDelegate extends RouterDelegate<RoutePath>
   final HomePage _homePage = HomePage();
 
   MoviesDBRouterDelegate() : navigatorKey = GlobalKey<NavigatorState>() {
-    _routerProvider = RouterProvider();
     _routerProvider.addListener((state) => notifyListeners);
   }
 
-  RouterProvider _routerProvider;
+  final RouterProvider _routerProvider = RouterProvider();
 
   @override
   void dispose() {
@@ -50,6 +48,7 @@ class MoviesDBRouterDelegate extends RouterDelegate<RoutePath>
         ),
       );
 
+/*
   List<Page> get _pages {
     List<Page> pages = [
       MaterialPage(
@@ -70,6 +69,7 @@ class MoviesDBRouterDelegate extends RouterDelegate<RoutePath>
 
     return pages;
   }
+*/
 
   @override
   final GlobalKey<NavigatorState> navigatorKey;
@@ -83,7 +83,6 @@ class MoviesDBRouterDelegate extends RouterDelegate<RoutePath>
 
   @override
   Future<void> setNewRoutePath(RoutePath configuration) {
-    assert(configuration != null);
     _routerProvider.current = configuration;
     return SynchronousFuture<void>(null);
   }

@@ -4,8 +4,8 @@ import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:tester_app/di/providers/path_providers/path_provider.dart';
 import 'package:tester_app/di/providers/search_provider.dart';
-import 'package:tester_app/l10n/app_localizations.dart';
-import 'package:tester_app/models/response_type/response_type.dart';
+import 'package:tester_app/localization/l10n.dart';
+import 'package:tester_app/models/response_type/models.dart';
 import 'package:tester_app/ui/base_widgets/base_app_page.dart';
 import 'package:tester_app/ui/base_widgets/base_constants/base_border.dart';
 import 'package:tester_app/ui/base_widgets/base_state_widget.dart';
@@ -19,7 +19,7 @@ class SearchScreen extends BaseAppPage {
 
 class _SearchScreenState extends BaseAppPageState<SearchScreen> {
   final _formKey = GlobalKey<FormFieldState>();
-  FocusNode _searchFocusNode;
+  late FocusNode _searchFocusNode;
 
   @override
   void initState() {
@@ -31,10 +31,10 @@ class _SearchScreenState extends BaseAppPageState<SearchScreen> {
   Widget get body => Container(
         child: ResultStateBuilder<SearchProvider, Movie>(
           builder: (context, moviesList, child) {
-            if (moviesList.totalResults > 0) {
+            if (moviesList.totalResults! > 0) {
               return MoviesGrid(
-                movies: moviesList.results,
-                crossAxisCount: 3,
+                movies: moviesList.results as List<Movie>,
+                crossAxisCount: MediaQuery.of(context).size.width ~/ 120,
               );
             } else
               return Center(
@@ -47,7 +47,7 @@ class _SearchScreenState extends BaseAppPageState<SearchScreen> {
   @override
   PreferredSizeWidget get appBar {
     return BaseAppBar(
-      toolbarHeight: MediaQuery.of(context).size.height * 0.1,
+      toolbarHeight: MediaQuery.of(context).size.height * 0.1 + 8,
       flexibleSpace: Container(
         child: Stack(
           children: [
@@ -55,7 +55,7 @@ class _SearchScreenState extends BaseAppPageState<SearchScreen> {
               bottom: 8.0,
               right: 64.0,
               left: 64.0,
-              top: 8.0,
+              top: MediaQuery.of(context).padding.top + 8,
               child: Container(
                 // padding: EdgeInsets.symmetric(horizontal: 64.0, vertical: 8.0),
                 child: TextFormField(
@@ -64,8 +64,8 @@ class _SearchScreenState extends BaseAppPageState<SearchScreen> {
                   onFieldSubmitted: (_) => search(),
                   onChanged: (query) => context.read<SearchProvider>().query = query,
                   validator: (text) {
-                    if (text.isEmpty)
-                      return ' You should provide a key word.';
+                    if (text!.isEmpty)
+                      return AppLocalizations.of(context).searchValidation;
                     else
                       return null;
                   },
@@ -78,7 +78,7 @@ class _SearchScreenState extends BaseAppPageState<SearchScreen> {
                       borderRadius: BaseBorderRadiusDirectional.all().resolveSuper(context),
                       borderSide: BorderSide(
                         width: 2.0,
-                        color: Theme.of(context).iconTheme.color.withAlpha(0xB2),
+                        color: Theme.of(context).iconTheme.color!.withAlpha(0xB2),
                       ),
                     ),
                     hintText: AppLocalizations.of(context).searchHint,
@@ -97,7 +97,7 @@ class _SearchScreenState extends BaseAppPageState<SearchScreen> {
             Positioned.directional(
               end: 8,
               bottom: 4,
-              top: 4,
+              top: MediaQuery.of(context).padding.top + 8,
               textDirection: context.watch<Locale>().textDirection,
               child: IconButton(
                 icon: Icon(
@@ -132,8 +132,8 @@ class _SearchScreenState extends BaseAppPageState<SearchScreen> {
                   (mainPath) => RadioListTile<MainPath>(
                     value: mainPath,
                     groupValue: selectedMainPath,
-                    onChanged: (value) => context.read<SearchProvider>().currentMainPath = value,
-                    title: Text(mainPath.title),
+                    onChanged: (value) => context.read<SearchProvider>().currentMainPath = value!,
+                    title: Text(AppLocalizations.of(context).mainPathTitle(mainPath.url)),
                   ),
                 )
                 .toList(),
@@ -144,7 +144,7 @@ class _SearchScreenState extends BaseAppPageState<SearchScreen> {
   }
 
   void search() {
-    if (_formKey.currentState.validate()) {
+    if (_formKey.currentState!.validate()) {
       context.read<SearchProvider>().search();
     }
   }

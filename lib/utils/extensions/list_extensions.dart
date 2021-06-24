@@ -29,3 +29,5 @@ extension Splitter<E> on List<E> {
     return slice;
   }
 }
+
+class ImmutableList<T> {}

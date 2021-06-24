@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:tester_app/l10n/app_localizations.dart';
+import 'package:tester_app/localization/l10n.dart';
 
 extension MoviesDBStringFormat on String {
-  String localize(BuildContext context) {
-    return AppLocalizations.of(context).translate(this);
+  String localize() {
+    return AppLocalizations.current.translate(this);
   }
 }
 
@@ -13,7 +12,7 @@ extension StringLocalizer on AppLocalizations {
       case 'favorites':
         return favorites;
       default:
-        return localeName;
+        return key;
     }
   }
 }

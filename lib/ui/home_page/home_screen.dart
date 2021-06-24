@@ -4,7 +4,8 @@ import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:tester_app/di/providers/movies_provider.dart';
 import 'package:tester_app/di/providers/path_providers/path_provider.dart';
-import 'package:tester_app/models/response_type/response_type.dart';
+import 'package:tester_app/localization/l10n.dart';
+import 'package:tester_app/models/response_type/models.dart';
 import 'package:tester_app/ui/base_widgets/base_app_page.dart';
 import 'package:tester_app/ui/base_widgets/base_constants/base_border.dart';
 import 'package:tester_app/ui/base_widgets/base_state_widget.dart';
@@ -29,7 +30,7 @@ class _HomeScreenState extends BaseAppPageState<HomeScreen> with TickerProviderS
                 children: [
                   StateNotifierBuilder<List<TypePath>>(
                     stateNotifier: context.watch<TypePathListProvider>(),
-                    builder: (BuildContext context, typePathList, Widget child) => Container(
+                    builder: (context, typePathList, child) => Container(
                       height: (typePathList.length * 110.0) + 56.0,
                       child: Row(
                         children: [
@@ -52,7 +53,7 @@ class _HomeScreenState extends BaseAppPageState<HomeScreen> with TickerProviderS
                                       ),
                                       child: StateNotifierBuilder<TypePath>(
                                         stateNotifier: context.watch<TypePathProvider>(),
-                                        builder: (BuildContext context, typePath, Widget child) => TabBar(
+                                        builder: (context, typePath, child) => TabBar(
                                           labelPadding: EdgeInsets.zero,
                                           controller: TabController(
                                             vsync: this,
@@ -75,7 +76,7 @@ class _HomeScreenState extends BaseAppPageState<HomeScreen> with TickerProviderS
                                                   Container(
                                                     width: 90,
                                                     child: Tab(
-                                                      text: typePath.title,
+                                                      text: AppLocalizations.of(context).typePathTitle(typePath.url),
                                                     ),
                                                   ),
                                                 ),
@@ -97,7 +98,7 @@ class _HomeScreenState extends BaseAppPageState<HomeScreen> with TickerProviderS
                             child: Container(
                               child: Icon(
                                 Icons.arrow_right,
-                                color: Theme.of(context).primaryIconTheme.color.withAlpha(0xB2),
+                                color: Theme.of(context).primaryIconTheme.color!.withAlpha(0xB2),
                               ),
                             ),
                           ),
@@ -107,15 +108,12 @@ class _HomeScreenState extends BaseAppPageState<HomeScreen> with TickerProviderS
                   ),
                   Expanded(
                     child: ResultStateBuilder<MoviesProvider, Movie>(
-                      builder: (context, data, child) {
-                        List<Movie> movies = data.results;
-                        return Container(
-                          child: MoviesGrid(
-                            movies: movies,
-                            crossAxisCount: 2,
-                          ),
-                        );
-                      },
+                      builder: (context, data, child) => Container(
+                        child: MoviesGrid(
+                          movies: data.results as List<Movie>,
+                          crossAxisCount: MediaQuery.of(context).size.width ~/ 180,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -154,9 +152,9 @@ class _HomeScreenState extends BaseAppPageState<HomeScreen> with TickerProviderS
                     tabs: (context.watch<MainPathProvider>().mainPathList)
                         .map(
                           (mainPath) => Container(
-                            width: 50,
+                            width: 100,
                             child: Tab(
-                              text: mainPath.title,
+                              text: AppLocalizations.of(context).mainPathTitle(mainPath.url),
                             ),
                           ),
                         )
@@ -165,13 +163,12 @@ class _HomeScreenState extends BaseAppPageState<HomeScreen> with TickerProviderS
         ),
       );
 
-  AnimationController _animationController;
-  Animation<double> _animation;
+  late AnimationController _animationController;
+  late Animation<double> _animation;
 
   @override
   void initState() {
     super.initState();
-    context.read<MoviesProvider>().loadMovies();
     _animationController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 500),
@@ -197,7 +194,7 @@ class _HomeScreenState extends BaseAppPageState<HomeScreen> with TickerProviderS
   }
 
   _updateDragging(DragUpdateDetails updateDetails) {
-    double delta = updateDetails.primaryDelta / kToolbarHeight;
+    double delta = updateDetails.primaryDelta! / kToolbarHeight;
     _animationController.value += delta;
   }
 

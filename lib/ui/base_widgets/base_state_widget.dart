@@ -9,10 +9,10 @@ import 'package:tester_app/ui/base_widgets/loading.dart';
 
 class ResultStateBuilder<DataProvider extends ResultStateNotifier, ResultData> extends StatelessWidget {
   final ValueWidgetBuilder<ApiResponse<ResultData>> builder;
-  final Widget child;
+  final Widget? child;
 
   const ResultStateBuilder({
-    @required this.builder,
+    required this.builder,
     this.child,
   });
 

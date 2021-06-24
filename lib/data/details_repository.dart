@@ -2,7 +2,7 @@ import 'package:tester_app/data/api/movies_db_client.dart';
 import 'package:tester_app/models/api_response/api_response.dart';
 import 'package:tester_app/models/api_result/api_result.dart';
 import 'package:tester_app/models/network_exceptions/network_exceptions.dart';
-import 'package:tester_app/models/response_type/response_type.dart';
+import 'package:tester_app/models/response_type/models.dart';
 
 class DetailsRepository {
   final MoviesDBClient _moviesDBClient;

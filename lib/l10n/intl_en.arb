@@ -1,0 +1,157 @@
+{
+  "@@locale": "en",
+  "appTitle": "My Movies",
+  "@appTitle": {
+    "description": "Application Title"
+  },
+  "badRequest": "Bad request",
+  "@badRequest": {
+    "description": "Bad Request Error"
+  },
+  "connectionRequestTimeout": "Connection request timeout",
+  "@connectionRequestTimeout": {
+    "description": "Connection Request Timeout Error"
+  },
+  "country": "Country",
+  "@country": {
+    "description": "Country title"
+  },
+  "errorDueToAConflict": "Error due to a conflict",
+  "@errorDueToAConflict": {
+    "description": "Error Due To A Conflict Error"
+  },
+  "errorOccurred": "Error occurred: {error}",
+  "@errorOccurred": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "errorOccurredError": "Error occurred: $error",
+  "@errorOccurredError": {},
+  "favorites": "Favorites",
+  "@favorites": {
+    "description": "Favorites page title"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Home page title"
+  },
+  "internalServerError": "Internal Server Error",
+  "@internalServerError": {
+    "description": "Internal Server Error Error"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Language key"
+  },
+  "localization": "Language & Country",
+  "@localization": {
+    "description": "Localization title"
+  },
+  "methodAllowed": "Method Allowed",
+  "@methodAllowed": {
+    "description": "Method Allowed Error"
+  },
+  "movie": "Movie",
+  "@movie": {
+    "description": "Movie tab title"
+  },
+  "movies": "Movies",
+  "@movies": {
+    "description": "Movies title"
+  },
+  "noInternetConnection": "No internet connection",
+  "@noInternetConnection": {
+    "description": "No Internet Connection Error"
+  },
+  "notAcceptable": "Not acceptable",
+  "@notAcceptable": {
+    "description": "Not Acceptable Error"
+  },
+  "notFound": "Not found",
+  "@notFound": {},
+  "notImplemented": "Not Implemented",
+  "@notImplemented": {
+    "description": "Not Implemented Error"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile page Title"
+  },
+  "receivedInvalidStatusCode": "Received invalid status code: {responseCode}",
+  "@receivedInvalidStatusCode": {
+    "placeholders": {
+      "responseCode": {}
+    }
+  },
+  "requestCancelled": "Request Cancelled",
+  "@requestCancelled": {
+    "description": "Request Cancelled Error"
+  },
+  "search": "Search",
+  "@search": {
+    "description": "Search page title"
+  },
+  "searchHint": "Search...",
+  "@searchHint": {
+    "description": "Search hint"
+  },
+  "selectCountry": "Select Country",
+  "@selectCountry": {
+    "description": "Select Country title"
+  },
+  "selectLanguage": "Select Language",
+  "@selectLanguage": {
+    "description": "Select Language title"
+  },
+  "selectLocale": "{localeName, select, en{English} ar{العربية} other{Other}}",
+  "@selectLocale": {
+    "placeholders": {
+      "localeName": {
+
+      }
+    }
+  },
+  "sendTimeoutInConnectionWithApiServer": "Send timeout in connection with API server",
+  "@sendTimeoutInConnectionWithApiServer": {
+    "description": "Send Timeout In Connection With Api Server Error"
+  },
+  "serviceUnavailable": "Service unavailable",
+  "@serviceUnavailable": {
+    "description": "Service Unavailable Error"
+  },
+  "tv": "TV",
+  "@tv": {
+    "description": "TV Title"
+  },
+  "unableToProcessTheData": "Unable to process the data",
+  "@unableToProcessTheData": {
+    "description": "Unable To Process The Data Error"
+  },
+  "unauthorizedRequest": "Unauthorized request",
+  "@unauthorizedRequest": {
+    "description": "Unauthorized Request Error"
+  },
+  "unexpectedErrorOccurred": "Unexpected error occurred",
+  "@unexpectedErrorOccurred": {
+    "description": "Unexpected Error Occurred Error"
+  },
+  "videos": "Videos",
+  "@videos": {},
+  "searchValidation": "You should provide a key word.",
+  "mainPathTitle": "{path, select, movie{Movies} tv{TV} other{Other}}",
+  "@mainPathTitle": {
+    "placeholders": {
+      "path": {
+
+      }
+    }
+  },
+  "typePathTitle": "{path, select, popular{Popular} top_rated{Top rated} upcoming{Upcoming} now_playing{Now playing} other{Other}}",
+  "@typePathTitle": {
+    "placeholders": {
+      "path": {
+      }
+    }
+  }
+}
